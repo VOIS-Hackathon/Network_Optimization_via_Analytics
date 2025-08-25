@@ -1,0 +1,15 @@
+Analyze network performance data (e.g., latency, dropped calls, bandwidth usage) to identify patterns and anomalies
+Underperforming regions
+Optimization Techniques
+
+Key Tasks:
+
+Clean and normalize network performance logs
+
+Perform time-series and geospatial analysis to detect anomalies
+
+Use clustering or anomaly detection algorithms to identify problem zones
+
+Build a dashboard with KPIs like average latency, call drop rate, and bandwidth utilization
+
+Provide data-driven recommendations for network upgrades or reconfiguration
