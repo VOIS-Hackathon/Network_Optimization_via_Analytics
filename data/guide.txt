@@ -13,3 +13,25 @@ Use clustering or anomaly detection algorithms to identify problem zones
 Build a dashboard with KPIs like average latency, call drop rate, and bandwidth utilization
 
 Provide data-driven recommendations for network upgrades or reconfiguration
+
+
+Potential Network Metrics:
+
+1. Latency
+2. Jitter
+3. Packet Loss
+4. Throughput
+5. Network Speed
+6. Bandwidth
+7. Network Availability
+8. Packet Duplication
+9. Packet Reordering
+10. User Quality of Experience
+11. MOS Score
+12. VoIP Quality
+13. Network Congestion
+14. Round-Trip Time (RTT)
+15. Network Utilization
+16. Error Rate
+17. TCP Retransmission Rate
+18. DNS Resolution Time
