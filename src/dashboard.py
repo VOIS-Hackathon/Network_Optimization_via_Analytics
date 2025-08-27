@@ -5,14 +5,17 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import base64
 import io
+import os
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "../data/cleaned_network_data.csv")
 
 # --- Data Loading and Preprocessing ---
 try:
     # Read the CSV file directly from the local file system.
-    df = pd.read_csv('cleaned_network_data.csv')
+    df = pd.read_csv(DATA_PATH)
 except Exception as e:
     print(f"Error reading CSV file. Please make sure 'cleaned_network_data.csv' is in the same directory as this script. Error: {e}")
     df = pd.DataFrame() # Create an empty DataFrame if an error occurs
@@ -177,7 +180,7 @@ if not df.empty:
             avg_call_drop_rate=('call_drop_rate', 'mean')
         ).reset_index()
 
-        fig_map = px.scatter_mapbox(
+        fig_map = px.scatter_map(
             map_data,
             lat="location.latitude",
             lon="location.longitude",
@@ -186,7 +189,7 @@ if not df.empty:
             hover_name="tower_id",
             hover_data={"avg_call_drop_rate": ':.2f'},
             color_continuous_scale=px.colors.sequential.Inferno,
-            mapbox_style="carto-positron",
+            map_style="carto-positron",
             zoom=10,
             title="Underperforming Regions by Average Call Drop Rate"
         )
