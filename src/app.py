@@ -9,11 +9,12 @@ import plotly.express as px  # type: ignore
 import plotly.io as pio  # type: ignore
 import plotly.graph_objects as go  # type: ignore
 import pickle
+import os
 
 with open('model/tower_optimization_model.pkl', 'rb') as f:
     model = pickle.load(f)
     
-df = pd.read_csv("src/assets/final_data.csv")
+df = pd.read_csv(os.path.join(os.path.dirname(__file__), "final_data.csv"))
 
 # -------------------
 # Dash App
