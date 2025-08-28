@@ -1,0 +1,178 @@
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --bg-light: white;
+    --text-light: black;
+    --bg-dark: #111;
+    --text-dark: white;
+    --border-light: black;
+    --border-dark: white;
+}
+body {
+    margin: 0px;
+}
+
+#theme-container {
+    min-height: 100vh;
+    padding-top: 10px;
+}
+.container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Main container */
+#theme-container.light {
+    --border: var(--border-light);
+    --tag-bg: var(--text-light);
+    --tag-text: var(--bg-light);
+    --tag-selected-bg: var(--bg-light);
+    --tag-selected-text: var(--text-light);
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+
+#theme-container.dark {
+    --border: var(--border-dark);
+    --tag-bg: var(--text-dark);
+    --tag-text: var(--bg-dark);
+    --tag-selected-bg: var(--bg-dark);
+    --tag-selected-text: var(--text-dark);
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Floating theme button */
+.theme-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background: #444;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.2s;
+}
+
+.theme-btn:hover {
+    background: #666;
+}
+
+/* Filters as grid */
+.filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* two columns */
+    gap: 20px;
+    align-items: start;
+}
+
+/* Labels aligned neatly */
+.filter label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Inputs look transparent with border */
+.filter .Select-control,
+.filter input,
+.filter .DateInput_input {
+    background: transparent !important;
+    border: 1px solid var(--text) !important;
+    /* color: var(--text) !important; */
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 0.9rem;
+}
+
+/* Dropdown menu */
+.filter .Select-menu {
+    background: var(--bg) !important;
+    border: 1px solid var(--text);
+}
+
+
+/* Selected values (tags in multi select) */
+.filter .Select-value {
+    color: var(--text) !important;
+}
+
+/* Date picker popup */
+.filter .DateRangePicker_picker {
+    background-color: transparent;
+    color: var(--text) !important;
+    /* border: 1px solid var(--text); */
+}
+/* KPI Cards */
+.kpi-card {
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 12px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 17%;
+    transition: border-color 0.3s;
+}
+
+/* Tabs container */
+.tabs {
+    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-light);
+    transition: background 0.3s;
+}
+
+#theme-container.dark .tabs {
+    background-color: var(--bg-dark);
+}
+
+/* Individual tab */
+.tab {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+}
+
+#theme-container.dark .tab {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    border: 1px solid var(--border);
+}
+
+/* Active tab */
+.tab--selected {
+    font-weight: bold;
+    border-bottom: 2px solid var(--border);
+}
+
+div[data-dash-is-loading="true"] .js-plotly-plot .plot-container .svg-container .main-svg {
+    /* background: linear-gradient(90deg, var(--bg), #2a2a2a, #1e1e1e);
+    background-size: 200% 100%;
+    animation: shimmer 5.5s infinite; */
+    opacity: 0;
+}
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
