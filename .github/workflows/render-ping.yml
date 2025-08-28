@@ -1,0 +1,14 @@
+name: Keep Render Alive
+
+on:
+  schedule:
+    - cron: '*/25 * * * *' 
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl ping Render
+        run: |
+          curl -s https://network-optimization-via-analytics.onrender.com/ > /dev/null || echo "Ping failed"
