@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Curl ping Render
         run: |
-          curl -s https://network-optimization-via-analytics.onrender.com/ > /dev/null || echo "Ping failed"
+          curl -s https://network-optimization-via-analytics.onrender.com > /dev/null || echo "Ping failed"
